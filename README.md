@@ -4,11 +4,11 @@ This is a web application developed using Streamlit that helps developers identi
 ## Requirements
 The following libraries were used to develop this application:
 
-Streamlit: A Python library used for building data-driven web applications that allows developers to create interactive and customizable web interfaces for machine learning models and data analysis.
-Matplotlib: A Python library used for creating visualizations like line charts, scatterplots, and histograms, providing high-quality 2D and 3D plots for publication-ready figures.
-Seaborn: A Python library based on matplotlib used for creating statistical graphics like heatmaps, violin plots, and box plots, that simplifies the creation of complex visualizations and enhances the overall aesthetics.
-Pandas: A Python library used for data manipulation and analysis, providing high-performance and easy-to-use data structures like DataFrame and Series for working with structured and labeled data.
-NumPy: A Python library used for numerical computations and scientific computing, providing fast and efficient array operations for performing mathematical operations on large datasets.
+Streamlit
+Matplotlib
+Seaborn
+Pandas
+NumPy
 
 ## Usage
 To use this application, follow these steps:
