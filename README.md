@@ -1,4 +1,4 @@
-## Code Visualization Tool
+# Code Visualization Tool
 This is a web application developed using Streamlit that helps developers identify potential anomalies in code by highlighting patterns of unusual occurrences. The application performs data preprocessing, data analysis, and data visualization on the Linux Kernel Git Revision History dataset to provide insights into the code.
 
 ## Requirements
