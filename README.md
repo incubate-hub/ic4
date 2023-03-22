@@ -4,11 +4,11 @@ This is a web application developed using Streamlit that helps developers identi
 ## Requirements
 The following libraries were used to develop this application:
 
-Streamlit
-Matplotlib
-Seaborn
-Pandas
-NumPy
+- Streamlit
+- Matplotlib
+- Seaborn
+- Pandas
+- NumPy
 
 ## Usage
 To use this application, follow these steps:
