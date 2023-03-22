@@ -41,46 +41,46 @@ if uploaded_file is not None:
         # Display the plot in Streamlit
         st.pyplot(fig2)
 
-        #4
+        #3
         st.title("Number of files changed per commit")
         # Number files changed per commit
         # Assuming that df is a pandas DataFrame with columns: author_dt, commit_hash, filename
         files_changed_per_commit = df.groupby(['author_dt', 'commit_hash'])['filename'].agg('count').reset_index().sort_values('author_dt', ascending=True)
         files_changed_per_commit = pd.Series(files_changed_per_commit['filename'].values, index=files_changed_per_commit['author_dt'])
         # Create a Streamlit figure object
-        fig4, ax = plt.subplots(figsize=(12,8))
+        fig3, ax = plt.subplots(figsize=(12,8))
         # Plot the data
         files_changed_per_commit.plot(title='number files changed per commit', ax=ax)
         # Display the plot in Streamlit
-        st.pyplot(fig4)
+        st.pyplot(fig3)
         
-        #5
+        #4
         st.title("Distribution of Number of Files Changed per Commit")
         # Assuming that the data has already been loaded into a pandas dataframe 'df'
         # Trim the distribution
         n_files_changed_per_commit = df.groupby('commit_hash')['filename'].agg('count')
         n_files_changed_per_commit = n_files_changed_per_commit[n_files_changed_per_commit < 20]
         # Plot the distribution using Seaborn
-        fig5, ax = plt.subplots()
+        fig4, ax = plt.subplots()
         sns.distplot(n_files_changed_per_commit, kde=False, ax=ax)
         ax.set_title('Distribution of Number of Files Changed per Commit')
         ax.set_xlabel('Number of Changed Files')
         # Display the plot using Streamlit
-        st.pyplot(fig5)
+        st.pyplot(fig4)
 
-        #6 additions_per_commit
+        #5 additions_per_commit
         st.title('Additions per commit')
         # Calculate the sum of additions per commit
         additions_per_commit = df.groupby('commit_hash')['n_additions'].agg(np.sum)
         # Filter out commits with more than 100 additions
         additions_per_commit = additions_per_commit[additions_per_commit < 100]
         # Create a plot using Seaborn's distplot function
-        fig6, ax = plt.subplots(figsize=(12, 8))
+        fig5, ax = plt.subplots(figsize=(12, 8))
         sns.distplot(additions_per_commit, ax=ax)
         # Display the plot in Streamlit
-        st.pyplot(fig6)
+        st.pyplot(fig5)
         
-        #7 Commit Activity
+        #6 Commit Activity
         st.title('Commit Activity')
         df['subject_char_len'] = df['subject'].str.len()
         # calculate commit activity
@@ -88,10 +88,10 @@ if uploaded_file is not None:
         # create Streamlit app
         # create heatmap
         cmap = plt.get_cmap('viridis')
-        fig7, ax = plt.subplots()
+        fig6, ax = plt.subplots()
         sns.heatmap(df[['commit_utc_offset_hours', 'commit_activity', 'subject_char_len']].corr(), cmap=cmap, ax=ax)
         # display the heatmap in Streamlit
-        st.pyplot(fig7)
+        st.pyplot(fig6)
 
 
 
